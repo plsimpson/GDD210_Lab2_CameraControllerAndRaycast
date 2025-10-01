@@ -78,14 +78,11 @@ public class PlayerJit : MonoBehaviour
                     hitButton.Press();
                 }
             }
-            if (hit.transform.CompareTag("Saw"))
+            
+            if (hit.transform.CompareTag("Barrel"))
             {
-                Debug.DrawLine(transform.position, hit.point, Color.green);
-                if (Input.GetMouseButtonDown(0))
-                {
-                    //hit.transform.GetComponent<CharacterHP>().TakeDamage(3);
-                    hit.transform.position += transform.forward;
-                }
+                //Debug.DrawLine(transform.position, hit.point, Color.yellow);
+                Destroy(hit.transform.gameObject);
             }
         }
     }
